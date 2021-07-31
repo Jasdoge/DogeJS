@@ -1,0 +1,22 @@
+{
+  "name": "dogejs",
+  "version": "0.0.1",
+  "description": "A library to make doge transactions using public APIs",
+  "main": "DogeJS.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "dogecoin",
+    "api"
+  ],
+  "author": "Jasdoge",
+  "license": "MIT",
+  "dependencies": {
+    "crypto": "^1.0.1",
+    "node-fetch": "^2.6.1"
+  }
+}
