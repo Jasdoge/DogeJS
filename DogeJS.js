@@ -154,7 +154,7 @@ class DogeLib{
 
 	async simpleTransferCoins( wifkey, to, amount, fee = 0, change_addr = false, dry_run = false ){
 
-		const transaction = await this.createTransaction(wifkey, to, amount, fee);
+		const transaction = await this.createTransaction(wifkey, to, amount, fee, change_addr);
 		const signed = this.signTransaction(wifkey, transaction);
 
 		if( dry_run ){

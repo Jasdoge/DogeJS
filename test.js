@@ -1,4 +1,4 @@
-const d = require('./DogeJS.js');
+const d = require('./DogeJS');
 const DogeJS = new d();
 
 (async () => {
@@ -13,6 +13,10 @@ const DogeJS = new d();
 	);
 	console.log(
 		"Wallet wifKey (keep this secure, this is what lets you spend your doge): "+wifKey
+	);
+
+	console.log(
+		"Wallet address generated from wifKey: " + DogeJS.wif2address(wifKey).address
 	);
 
 	// Get balance
