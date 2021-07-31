@@ -3,9 +3,13 @@ const DogeJS = new d();
 
 (async () => {
 
-
+	// Generates a new wallet
 	const credentials = DogeJS.generateWallet();
+
+	// Wallet address is where you send the coins
 	const walletAddress = credentials.address;
+
+	// wifKey is what you need to store in order to access your coins.
 	const wifKey = credentials.wif;
 
 	console.log(
@@ -15,25 +19,26 @@ const DogeJS = new d();
 		"Wallet wifKey (keep this secure, this is what lets you spend your doge): "+wifKey
 	);
 
+	// You can always get the private key and wallet address from the wifKey
 	console.log(
 		"Wallet address generated from wifKey: " + DogeJS.wif2address(wifKey).address
 	);
 
-	// Get balance
+	// Get wallet balance
 	try{
 		console.log("Balance", await DogeJS.addressBalance(walletAddress));
 	}catch(err){
 		console.log("Unable to fetch balance:", err);
 	}
 
-	// Get unspent inputs for address
+	// Get unspent inputs for address (advanced)
 	try{
 		console.log("Unspent inputs", await DogeJS.listUnspent(walletAddress));
 	}catch( err ){
 		console.log("Unable to get unspent inputs:", err);
 	}
 	
-	// Attempt a transaction (will fail because 
+	// Attempt a transaction (will fail because you don't have enough money)
 	try{
 
 		console.log(await DogeJS.simpleTransferCoins( 
